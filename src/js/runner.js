@@ -21,7 +21,7 @@ function mission1_3() {
 function mission2_1() {
 	const [입력1, 입력2] = arguments;
 
-	const plus = "더하기 결과 입니다 -> " + (Number(입력1) + Number(입력2));
+	const plus = "더하기 결과 입니다 -> " + (parseInt(입력1) + parseInt(입력2));
 	const div = "나누기 결과 입니다 -> " + (입력1 / 입력2).toFixed();
 	출력(plus + "<br>" + div);
 }
@@ -47,17 +47,22 @@ function mission2_3(radius) {
 }
 
 function mission2_4() {
-	let [입력1] = arguments;
-	입력1 = parseInt(입력1).toFixed();
-	const price = 25000 * 0.8;
-	let res = price + 2500;
+	let [count] = arguments;
+	count = parseInt(count).toFixed();
 
-	if (isNaN(입력1)) {
-		출력("숫자를 입력하세요.");
-	} else if (입력1 == 1) {
-		출력(res);
+	if (isNaN(count)) {
+		출력('숫자를 입력하세요.');
 	} else {
-		res += (입력1 - 1) * 21500;
-		출력(res);
+		count = Math.round(count);
+		const price = 25000;
+
+		const firstDeliveryFee = 2500;
+		const normalDeliveryFee = 1500;
+
+		const totalHBPrice = price * count * 0.8;
+		const totalDeliveryFee = firstDeliveryFee + (normalDeliveryFee * (count - 1));
+
+		const totalPrice = totalHBPrice + totalDeliveryFee;
+		출력(totalPrice);
 	}
 }
