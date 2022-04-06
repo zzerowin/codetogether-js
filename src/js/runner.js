@@ -40,8 +40,8 @@ function mission2_3(radius) {
 	} else if (입력2 > 100) {
 		출력('너무 큰 숫자입니다!')
 	} else {
-		const volme = (( Math.PI * 입력1 ** 2 * 입력2 ) / 3).toFixed(1)
-		result = `반지름이 ${입력1} 이고 높이기 ${입력2}인 원뿔의 부피는 ${volme} 입니다.`;
+		const volume = (( Math.PI * 입력1 ** 2 * 입력2 ) / 3).toFixed(1)
+		result = `반지름이 ${입력1} 이고 높이기 ${입력2}인 원뿔의 부피는 ${volume} 입니다.`;
 		출력(result);
 	}
 }
